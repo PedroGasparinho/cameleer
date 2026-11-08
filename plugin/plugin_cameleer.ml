@@ -7,7 +7,7 @@ let debug = ref false
 
 open Why3.Typing
 open Wstdlib
-open Ident
+(*open Ident*)
 open Cameleer
 module Pm = Pmodule
 module E = Cameleer.Expression
@@ -189,10 +189,10 @@ let read_channel env path file c =
   (* Closes the top module *)
   mk_refine_modules info mod_name;
   let mm = close_file () in
-  (if Debug.test_flag print_modules then
+  (*if Debug.test_flag print_modules then
    let print_m _ m = Format.eprintf "%a@\n@." Pm.print_module m in
    let add_m _ m mm = Mid.add m.Pm.mod_theory.Theory.th_name m mm in
-   Mid.iter print_m (Mstr.fold add_m mm Mid.empty));
+   Mid.iter print_m (Mstr.fold add_m mm Mid.empty));*)
   mm
 
 let () =

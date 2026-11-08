@@ -156,6 +156,7 @@ let rec term in_post Uast.{ term_desc = t_desc; term_loc } =
         Tupdate (term in_post t, List.map qualid_term q_t_list)
     | Uast.Tquant (q, bl, t) ->
         Tquant (quant q, List.map binder bl, [], term in_post t)
+    | _ -> assert false
   in
   mk_term (term_desc t_desc)
 
@@ -222,6 +223,7 @@ let rec expr Uast.{ term_desc = t_desc; term_loc } =
             empty_spec,
             expr t )
     | Uast.Tquant _ -> assert false
+    | _ -> assert false
     (* FIXME: add a better error message *)
   in
   mk_expr (expr_desc t_desc)
