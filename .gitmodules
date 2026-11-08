@@ -1,4 +1,4 @@
 [submodule "vocal"]
 	path = vocal
-	url = https://github.com/vocal-project/vocal
+	url = https://github.com/PedroGasparinho/gospel/
         branch = gospel_implementations
